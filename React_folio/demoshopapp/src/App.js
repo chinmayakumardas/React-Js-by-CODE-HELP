@@ -24,7 +24,7 @@ const App = () => {
     },
     {
       id: 'p4',
-      title: 'Maggi',
+      title: '555',
       amount: 450,
       date: new Date(2021, 5, 5),
     },
