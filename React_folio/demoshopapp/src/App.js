@@ -1,44 +1,44 @@
+import React from 'react';
+import NewProduct from './components/NewProduct';
 
-import './App.css';
-import Item from './components/Item';
-import ItemDate from './components/ItemDate'; 
-import Card from './components/Card'
+import Products from './components/Products';
 
-function App() {
-  const response=[
+const App = () => {
+  const products = [
     {
-      itemName:'Nirma',
-      itemDate:"11",
-      itemMonth:"Aug",
-      itemYear:"1998"
+      id: 'p1',
+      title: 'Nirma',
+      amount: 100,
+      date: new Date(2021, 8, 10),
+    },
+    { 
+      id: 'p2', 
+      title: 'Sirf Excel', 
+      amount: 200, 
+      date: new Date(2021, 2, 2) },
+    {
+      id: 'p3',
+      title: 'Tide',
+      amount: 130,
+      date: new Date(2021, 12, 28),
     },
     {
-      itemName:'Surf Excel',
-      itemDate:"12",
-      itemMonth:"Sep",
-      itemYear:"1999"
+      id: 'p4',
+      title: 'Maggi',
+      amount: 450,
+      date: new Date(2021, 5, 5),
     },
-    {
-      itemName:'555',
-      itemDate:"13",
-      itemMonth:"Oct",
-      itemYear:"2000"
-    },
-  ]
+  ];
+
+  function printProductData(data) {
+    console.log("i am inside APP.js")
+    console.log(data)
+  }
+
   return (
     <div>
-    <Card>
-      <Item name={response[0].itemName}>Price decreased</Item>
-      <ItemDate day={response[0].itemDate} month={response[0].itemMonth} year={response[0].itemYear} ></ItemDate>
-
-      <Item name={response[1].itemName}></Item>
-      <ItemDate day={response[1].itemDate} month={response[1].itemMonth} year={response[1].itemYear}></ItemDate>
-
-      <Item name={response[2].itemName}></Item>
-      <ItemDate day={response[2].itemDate} month={response[2].itemMonth} year={response[2].itemYear}></ItemDate>
-      <div className="App">Hello</div>
-    </Card>
-      
+      <NewProduct pranay = {printProductData} />
+      <Products items={products} />
     </div>
   );
 }
