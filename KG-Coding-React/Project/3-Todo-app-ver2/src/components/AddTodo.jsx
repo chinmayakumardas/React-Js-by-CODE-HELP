@@ -4,8 +4,7 @@ const AddTodo = () => {
   return (
     <div>
         <div className="container ">
-    {/* dcvdvxhdvxhvcx */}
-      {/* ddxxbdjxbbx */}
+   
         <div className="row kg-row">
           <div className="col-6">
               <input type="text" placeholder="Enter the task"></input>

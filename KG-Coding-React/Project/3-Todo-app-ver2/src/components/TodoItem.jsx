@@ -1,14 +1,12 @@
-import React from "react";
 
-const TodoItem1 = () => {
-  let todoName = "Clean Room";
-  let todoDate = "14-02-2024";
+
+const TodoItem = ({todoName,todoDate}) => {
+  // let todoName = "Clean Room";
+  // let todoDate = "14-02-2024";
 
   return (
     <div>
       <div className="container ">
-        {/* dcvdvxhdvxhvcx */}
-        {/* ddxxbdjxbbx */}
         <div className="row kg-row">
           <div className="col-6">{todoName}</div>
           <div className="col-4">{todoDate}</div>
@@ -23,4 +21,4 @@ const TodoItem1 = () => {
   );
 };
 
-export default TodoItem1;
+export default TodoItem;
