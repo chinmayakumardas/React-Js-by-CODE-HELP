@@ -17,6 +17,10 @@ function App() {
       name: "Go to  Army hospital ",
       dueDate: "3/2/2023",
     },
+    {
+      name: "Go to  Sham mandir ",
+      dueDate: "3/7/2027",
+    },
   ];
   return (
     <center className="todo-container">
