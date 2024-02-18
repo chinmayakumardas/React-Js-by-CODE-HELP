@@ -13,6 +13,8 @@ const FoodItems = ({items}) => {
          <ul className="list-group">
          {items.map((item)=>(
           <Item key={item} foodItem={item}></Item>
+
+          
           ))}
       </ul>
     </div>

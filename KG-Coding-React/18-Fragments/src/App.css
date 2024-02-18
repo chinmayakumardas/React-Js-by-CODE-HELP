@@ -7,9 +7,10 @@
 
 
 .food-heading{
-    background-color: silver;
+    /* background-color: silver; */
     color: green;
     font-weight: 600;
+    text-align: center;
 }
 
 @keyframes logo-spin {

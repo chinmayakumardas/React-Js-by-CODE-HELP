@@ -1,13 +1,24 @@
-import React from 'react'
-import styles from './Item.module.css'
+import React from "react";
+import styles from "./Item.module.css";
 const Item = (props) => {
   //let {foodItem}=props;
-  return (
-    <div>
-       
-            <li className={`${styles['kg-item']} "list-group-item "`}><span className={styles['kg-span']}>{props.foodItem}</span></li>
-    </div>
-  )
+const handleButtonClicked=()=>{
+  console.log(`${props.foodItem} Being Brought.`)
 }
 
-export default Item
+
+  return (
+    <div>
+      <li className={`${styles["kg-item"]} "list-group-item "`}>
+        <span className={styles["kg-span"]}>{props.foodItem}</span>
+        <button className={`${styles.button} btn btn-info`}
+        onClick={()=>handleButtonClicked(props.foodItem)}
+         
+        
+        >Buy</button>
+      </li>
+    </div>
+  );
+};
+
+export default Item;

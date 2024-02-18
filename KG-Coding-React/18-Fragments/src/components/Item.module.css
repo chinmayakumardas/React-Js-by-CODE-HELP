@@ -1,5 +1,6 @@
 .kg-item {
     background-color: khaki;
+    height: 38px;
   }
   .kg-span {
     font-weight: 500;
@@ -8,4 +9,9 @@
   li{
     list-style: none;
    
+  }
+  .button{
+   margin-bottom: 5px;
+   
+    float: right;
   }
