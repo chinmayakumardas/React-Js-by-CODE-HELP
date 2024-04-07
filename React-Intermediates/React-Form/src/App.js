@@ -32,17 +32,21 @@ function submitHandler(event){
     <div className="App">
       APP
       <form onSubmit={submitHandler}>
+        <label htmlFor="firstname">First Name </label>
         <input
           type="text"
           value={formData.firstname}
           name="firstname"
+          id="firstname"
           placeholder="Enter First name..."
           onChange={changeHandler}
         ></input>{" "}
         <br />
         <br />
+        <label htmlFor="lastname">Last Name </label>
         <input
           name="lastname"
+          id="lastname"
           value={formData.lastname}
           type="text"
           placeholder="Enter First name..."
@@ -50,20 +54,23 @@ function submitHandler(event){
         ></input>
         <br />
         <br />
+        <label htmlFor="email">Email </label>
         <input
           name="email"
           value={formData.email}
-          
+          id="email"
           type="email"
           placeholder="Enter Email..."
           onChange={changeHandler}
         ></input>{" "}
         <br />
         <br />
+        <label htmlFor="comments">Comments </label>
         <textarea
           placeholder="Enter the Comments "
           value={formData.comments}
           name="comments"
+          id="comments"
           onChange={changeHandler}
         ></textarea>
         <br />
