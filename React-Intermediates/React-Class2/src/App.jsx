@@ -46,7 +46,7 @@ function App() {
       {/* first name */}
         <lable htmlFor="firstname">First Name</lable>
         <input
-         required
+         
           className="pl-2 rounded-md"
           type="text"
           id="firstname"
