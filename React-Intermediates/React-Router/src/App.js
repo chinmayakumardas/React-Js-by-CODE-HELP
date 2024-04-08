@@ -3,10 +3,9 @@ import "./App.css";
 import Contact from "./Component/Contact";
 import About from './Component/About';
 import Content from './Component/Content';
-import { Link } from "react-router-dom";
 import Home from './Component/Home';
 function App() {
- 
+//  two concept outlet rahila 
   return (
     <div className="App ">
     <nav className="">
