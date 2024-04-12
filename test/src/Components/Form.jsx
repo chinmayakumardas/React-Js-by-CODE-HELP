@@ -1,44 +1,153 @@
-import React, { useState } from 'react'
-
+import React from 'react'
+import { useState } from 'react';
 const Form = () => {
-  let [data,setdata]=useState({
-    name:'',
-    email:'',
-    gender:'',
-    password:'',
+  const [formData, setformData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    country: "",
+    street:"",
+    city:"",
+    state: "",
+    pincode:"",
+    adult:true,
+    singing:false,
+    dancing:false,
+    sport:false,
+  });
+  console.log(formData);
 
-  })
-  function inputHandler(e){
-    let formdata=e.target.value;
-    setdata(formdata)
-    console.log(formdata)
+  function changeHandler(event){
+    const { name, value, checked, type } = event.target;
+    setformData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+
   }
-  function submitHandler(e){
-    
-    console.log(data)
+
+  function submitHandler(event) {
+    event.preventDefault();
+    console.log("Form submited sucessfully");
+    // alert(formData.state)
   }
   return (
-    <div className='bg-green-500 h-screen flex flex-col gap-1 px-2'>
-      <label htmlFor='name'>Name</label>
-      <input type='text' id='name' name='name' onChange={inputHandler} value={data.name} placeholder='Enter name'></input>
+    <div className="App bg-gray-200 h-screen mx-auto flex flex-col">
+      <u>React Form</u>
+      <form
+        onSubmit={submitHandler}
+        className="flex flex-col w-[500px] justify-center items-center mx-auto"
+      >
+      {/* first name */}
+        <lable htmlFor="firstname">First Name</lable>
+        <input
+         
+          className="pl-2 rounded-md"
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Enter First name..."
+          onChange={changeHandler}
+          value={formData.firstname}
+        ></input>
+        {/* last name */}
+        <lable htmlFor="lastname">Last Name</lable>
+        <input
+          className="pl-2 rounded-md"
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="Enter Last name..."
+          onChange={changeHandler}
+          value={formData.lastname}
+        ></input>
+        {/* email */}
+        <label htmlFor="email">Email </label>
+        <input
+          name="email"
+          className="pl-2 rounded-md"
+          id="email"
+          type="email"
+          placeholder="Enter Email..."
+          onChange={changeHandler}
+          value={formData.email}
+        ></input>
+        {/* country */}
+        <label htmlFor="country">Country</label>
+        <select id="country" name="country" className="pl-2 rounded-md w-[38%]" onChange={changeHandler}  value={formData.country}>
+          <option>India</option>
+          <option>USA</option>
+          <option>Japan</option>
+          <option>China</option>
+        </select>
+        {/* street Address  */}
+        <lable htmlFor="street">Street Address</lable>
+        <input
+          className="pl-2 rounded-md"
+          type="text"
+          id="street"
+          name="street"
+          placeholder="Street name..."
+          onChange={changeHandler}
+          value={formData.street}
+        ></input>
+       
       
-      <label htmlFor='email'>Email</label>
-      <input type='text' id='email' name='email' onChange={inputHandler}  value={data.email} placeholder='Enter email'></input>
-
-      <label htmlFor='gender'>Gender</label>
-      <div className='flex gap-1 justify-center'>
-      <input type='radio' id='male' name='gender' onChange={inputHandler}  value={data.gender}  placeholder='Enter email'></input>
-      <label htmlFor='gender'>male</label>
-      
-      <input type='radio' id='female' name='gender' onChange={inputHandler}  value={data.gender} placeholder='Enter email'></input>
-      <label htmlFor='gender'>female</label>
-      </div>
-
-      <label htmlFor='password'>Password</label>
-      <input type='password' name='password' onChange={inputHandler} id='password' value={data.password}></input>
-
-
-      <button className='bg-red-500 ' onSubmit={submitHandler}>Submit</button>
+         {/* city */}
+         <lable htmlFor="city">City</lable>
+        <input
+          className="pl-2 rounded-md"
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Bhubaneswar"
+          onChange={changeHandler}
+          value={formData.city}
+        ></input>
+        {/* state/provinance */}
+        <lable htmlFor="state">State / provinance</lable>
+        <input
+          className="pl-2 rounded-md"
+          type="text"
+          id="state"
+          name="state"
+          placeholder="Odisha"
+          onChange={changeHandler}
+          value={formData.state}
+        ></input>
+        {/* zip code */}
+        <lable htmlFor="pincode">Pincode</lable>
+        <input
+          className="pl-2 rounded-md "
+          type="number"
+          id="pincode"
+          name="pincode"
+          placeholder="751024"
+          pattern="[0-9]{6}"
+          onChange={changeHandler}
+          value={formData.pincode}
+        ></input>
+        {/* Adult or not */}
+        <lable htmlFor="adult">Adult or Not ?</lable>
+        <div className="gap-2 flex ">
+        <input type="radio" id="yes" name="adult" onChange={changeHandler}  value="yes"></input>
+        <label htmlFor="yes">Yes</label>
+        <input type="radio" id="no" name='adult' onChange={changeHandler}  value="no"></input>
+        <label htmlFor="no">No</label>
+        </div>
+        <fieldset className="gap-5">
+          <legend className="">By Email</legend>
+          <input type="checkbox" id='singing' name="singing"  onChange={changeHandler}  value={formData.singing}></input>
+          <label>Singing</label>
+          <input type="checkbox" id='dancing' name="dancing"  onChange={changeHandler}  value={formData.dancing}></input>
+          <label>Dancing</label>
+          <input type="checkbox" id='sport' name="sport"  onChange={changeHandler}  value={formData.sport}></input>
+          <label>Sport</label>
+        </fieldset>
+        <button className="bg-blue-500 mt-4 h-[40px] text-white rounded-md px-4">Submit</button>
+      </form>
     </div>
   )
 }
