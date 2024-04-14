@@ -1,14 +1,15 @@
-import Template from "../components/Auth/Template";
+import React from 'react';
+import Template from "../components/Auth/Template"; // Corrected import path
 import signupImg from "../assets/signup.png";
 
-function Signup({ setIsLoggedIn }) {
+const Signup = ({ setIsLoggedIn }) => {
   return (
-    <Template
+     <Template
       title="Join the millions learning to code with StudyNotion for free"
-      description1="Build skills for today, tomorrow, and beyond."
-      description2="Education to future-proof your career."
+      desc1="Build skills for today, tomorrow, and beyond."
+      desc2="Education to future-proof your career."
       image={signupImg}
-      formType="signup"
+      formtype="signup" // Corrected prop name
       setIsLoggedIn={setIsLoggedIn}
     />
   );
