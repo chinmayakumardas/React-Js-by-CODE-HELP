@@ -3,7 +3,7 @@ import { useState } from 'react'
 // import List from './props-state/List';
 import Form from './Components/Form';
 import './App.css'
-
+import Mongo from './mongcomp/Mongo';
 
 function App() {
 //   const [neta,setNeta] = useState([
@@ -17,8 +17,9 @@ function App() {
   return (
     <>
      {/* <Cards neta={neta} deleteHandler={deleteHandler}></Cards> */}
-     <Form></Form> 
+     {/* <Form></Form>  */}
      {/* <List></List>  */}
+     {/* <Mongo/> */}
     </>
   )
 }
