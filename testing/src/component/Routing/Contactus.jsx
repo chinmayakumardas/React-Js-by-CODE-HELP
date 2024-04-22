@@ -1,5 +1,6 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
+import Timer from './Timer'
 const Contactus = () => {
   const navigate=useNavigate();
   function clickHandler(){
@@ -17,6 +18,7 @@ const Contactus = () => {
         Incorrect import placement: The imports for Routes and Route should be
         placed at the top of the file, not after the component definition.
       </p>
+      <Timer/>
 
     <button onClick={clickHandler} className='bg-red-700 px-2 py-2 rounded-sm border-[4px] border-blue-400'>🔙 Back to About us Page </button>
     <button onClick={clickHandler2} className='bg-red-700 px-2 py-2 rounded-sm border-[4px] border-blue-400'>🔙 Back to Home Page </button>
