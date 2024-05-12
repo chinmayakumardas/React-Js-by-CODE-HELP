@@ -1,0 +1,31 @@
+/* .spinner {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: conic-gradient(#0000 10%,#474bff);
+    --webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+    animation: spinner-zp9dbg 1s infinite linear;
+ }
+ 
+ @keyframes spinner-zp9dbg {
+    to {
+       transform: rotate(1turn);
+    }
+ } */
+
+ .spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   border: 9px solid;
+   border-color: #dbdcef;
+   border-right-color: #474bff;
+   animation: spinner-d3wgkg 1.5s infinite linear;
+   transition-delay: 10s;
+}
+
+@keyframes spinner-d3wgkg {
+   to {
+      transform: rotate(2turn);
+   }
+}
