@@ -14,6 +14,7 @@ const Home = () => {
       const res=await fetch(API_URL);
       const data=await res.json();
       setPost(data)
+      console.log(data)
     }catch(error){
       
       console.log(error)
